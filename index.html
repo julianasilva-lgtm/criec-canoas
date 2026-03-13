@@ -8,22 +8,33 @@
 <style>
 
 body{
-font-family: Arial, Helvetica, sans-serif;
+font-family: "Segoe UI", Arial, sans-serif;
 margin:0;
-background:#f4fbfb;
-color:#123;
+background:#f2fbfb;
+color:#0f2f33;
 }
 
 header{
-background:linear-gradient(120deg,#0b4f6c,#2a9d8f);
+background:linear-gradient(120deg,#0b4f6c,#1b8f7a);
 color:white;
-padding:60px 20px;
+padding:80px 20px;
 text-align:center;
 }
 
 header img{
-max-width:420px;
-margin-bottom:20px;
+max-width:460px;
+margin-bottom:25px;
+}
+
+header h1{
+margin:0;
+font-size:40px;
+}
+
+header p{
+font-size:20px;
+max-width:800px;
+margin:auto;
 }
 
 nav{
@@ -32,13 +43,14 @@ padding:15px;
 text-align:center;
 position:sticky;
 top:0;
+z-index:1000;
 }
 
 nav a{
 color:white;
-margin:0 18px;
+margin:0 15px;
 text-decoration:none;
-font-weight:bold;
+font-weight:600;
 }
 
 nav a:hover{
@@ -46,7 +58,7 @@ color:#9ee6d7;
 }
 
 section{
-max-width:1100px;
+max-width:1150px;
 margin:auto;
 padding:70px 20px;
 }
@@ -56,28 +68,45 @@ color:#0b4f6c;
 border-bottom:3px solid #2a9d8f;
 display:inline-block;
 padding-bottom:6px;
+margin-bottom:25px;
 }
 
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:28px;
 margin-top:30px;
 }
 
 .card{
 background:white;
 padding:25px;
-border-radius:10px;
-box-shadow:0 6px 14px rgba(0,0,0,0.08);
+border-radius:12px;
+box-shadow:0 8px 18px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-4px);
 }
 
 .diagram{
 text-align:center;
 font-size:20px;
-line-height:2.1;
+line-height:2.2;
 margin-top:40px;
 color:#134e4a;
+font-weight:600;
+}
+
+.timeline{
+margin-top:40px;
+border-left:4px solid #2a9d8f;
+padding-left:25px;
+}
+
+.timeline div{
+margin-bottom:25px;
 }
 
 .team{
@@ -92,8 +121,8 @@ flex:1;
 min-width:260px;
 background:white;
 padding:25px;
-border-radius:10px;
-box-shadow:0 6px 14px rgba(0,0,0,0.08);
+border-radius:12px;
+box-shadow:0 8px 18px rgba(0,0,0,0.08);
 }
 
 .member a{
@@ -102,31 +131,58 @@ font-weight:bold;
 text-decoration:none;
 }
 
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.stat{
+background:white;
+padding:25px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 8px 18px rgba(0,0,0,0.08);
+}
+
+.stat h3{
+font-size:34px;
+margin:0;
+color:#1b8f7a;
+}
+
 .logos{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
 align-items:center;
-gap:50px;
+gap:60px;
 margin-top:40px;
 }
 
 .logos img{
-height:70px;
+height:75px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+margin-top:30px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
 }
 
 footer{
 background:#083b44;
 color:white;
-padding:40px;
+padding:45px;
 text-align:center;
-margin-top:40px;
-}
-
-.hero-dna{
-font-size:22px;
-margin-top:20px;
-opacity:0.9;
+margin-top:50px;
 }
 
 </style>
@@ -143,9 +199,10 @@ opacity:0.9;
 
 <p><b>Saúde Única em uma Cidade Submersa</b></p>
 
-<div class="hero-dna">
-Ambiente → Exposição → Estresse Oxidativo → Dano ao DNA → Saúde Humana
-</div>
+<p>
+Integração entre ambiente, exposições ambientais e biomarcadores de dano ao DNA
+para compreender impactos das enchentes urbanas sobre a saúde humana, animal e ambiental.
+</p>
 
 </header>
 
@@ -155,6 +212,7 @@ Ambiente → Exposição → Estresse Oxidativo → Dano ao DNA → Saúde Human
 <a href="#atividades">Atividades</a>
 <a href="#ciencia">Base Científica</a>
 <a href="#resultados">Resultados</a>
+<a href="#timeline">Projeto</a>
 <a href="#equipe">Equipe</a>
 <a href="#instituicoes">Instituições</a>
 </nav>
@@ -164,11 +222,11 @@ Ambiente → Exposição → Estresse Oxidativo → Dano ao DNA → Saúde Human
 <h2>Sobre o Projeto</h2>
 
 <p>
-O Projeto CRIEC‑Canoas investiga os impactos ambientais e sanitários associados a eventos climáticos extremos, especialmente enchentes urbanas, considerando a interconexão entre saúde humana, animal e ambiental no contexto de Saúde Única.
+O Projeto CRIEC‑Canoas investiga os impactos ambientais e sanitários associados a eventos climáticos extremos, especialmente enchentes urbanas. O projeto integra abordagens de genética toxicológica, ecotoxicologia e saúde ambiental dentro do conceito de Saúde Única (One Health).
 </p>
 
 <p>
-Eventos de inundação podem mobilizar contaminantes químicos, biológicos e resíduos ambientais presentes no solo e na água, aumentando a exposição das populações a agentes potencialmente tóxicos. O projeto integra abordagens de genética toxicológica, ecotoxicologia e saúde ambiental para compreender os efeitos dessas exposições.
+Eventos de inundação podem mobilizar contaminantes químicos, biológicos e resíduos ambientais presentes no solo e na água, aumentando a exposição das populações humanas e animais a agentes potencialmente tóxicos.
 </p>
 
 </section>
@@ -185,7 +243,7 @@ Eventos de inundação podem mobilizar contaminantes químicos, biológicos e re
 </div>
 
 <div class="card">
-<b>Biomarcadores de exposição</b>
+<b>Biomarcadores genotóxicos</b>
 <p>Investigar danos ao DNA e outros biomarcadores associados à exposição ambiental.</p>
 </div>
 
@@ -195,8 +253,8 @@ Eventos de inundação podem mobilizar contaminantes químicos, biológicos e re
 </div>
 
 <div class="card">
-<b>Divulgação científica</b>
-<p>Promover educação socioambiental e comunicação científica.</p>
+<b>Educação socioambiental</b>
+<p>Promover divulgação científica e educação ambiental.</p>
 </div>
 
 </div>
@@ -211,21 +269,21 @@ Eventos de inundação podem mobilizar contaminantes químicos, biológicos e re
 
 <div class="card">
 <b>Coletas ambientais</b>
-<p>Coleta de água, sedimentos e amostras ambientais em áreas impactadas por eventos de inundação.</p>
+<p>Amostragem de água e sedimentos em áreas impactadas por inundações.</p>
 </div>
 
 <div class="card">
 <b>Análises laboratoriais</b>
-<p>Avaliação ecotoxicológica e genotoxicológica utilizando diferentes biomarcadores biológicos.</p>
+<p>Ensaios ecotoxicológicos e genotoxicológicos utilizando diferentes biomarcadores.</p>
 </div>
 
 <div class="card">
 <b>Formação de estudantes</b>
-<p>Participação de estudantes de graduação e pós‑graduação em atividades de pesquisa.</p>
+<p>Participação de estudantes de graduação e pós‑graduação em atividades científicas.</p>
 </div>
 
 <div class="card">
-<b>Ações socioeducativas</b>
+<b>Extensão científica</b>
 <p>Atividades de educação ambiental e divulgação científica junto à comunidade.</p>
 </div>
 
@@ -240,7 +298,7 @@ Eventos de inundação podem mobilizar contaminantes químicos, biológicos e re
 <p>Relação entre mudanças climáticas, exposições ambientais e saúde:</p>
 
 <div class="diagram">
-Mudanças climáticas <br>
+Mudanças climáticas<br>
 ↓<br>
 Eventos extremos / enchentes<br>
 ↓<br>
@@ -259,44 +317,76 @@ Impactos na saúde
 
 <section id="resultados">
 
-<h2>Resultados Científicos</h2>
+<h2>Indicadores do Projeto</h2>
 
-<ul>
-<li>Geração de dados ambientais em áreas impactadas por enchentes</li>
-<li>Avaliação ecotoxicológica de amostras ambientais</li>
-<li>Investigação de biomarcadores de dano ao DNA</li>
-<li>Produção científica e participação em eventos científicos</li>
-<li>Formação de recursos humanos em pesquisa</li>
-</ul>
+<div class="stats">
+
+<div class="stat">
+<h3>+50</h3>
+<p>Amostras ambientais</p>
+</div>
+
+<div class="stat">
+<h3>+20</h3>
+<p>Estudantes envolvidos</p>
+</div>
+
+<div class="stat">
+<h3>+10</h3>
+<p>Eventos científicos</p>
+</div>
+
+<div class="stat">
+<h3>+5</h3>
+<p>Publicações científicas</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="timeline">
+
+<h2>Desenvolvimento do Projeto</h2>
+
+<div class="timeline">
+
+<div>
+<b>2024</b> – Início do projeto e definição das áreas de estudo
+</div>
+
+<div>
+<b>2024–2025</b> – Coletas ambientais e análises laboratoriais
+</div>
+
+<div>
+<b>2025</b> – Divulgação científica e participação em eventos
+</div>
+
+<div>
+<b>2025–2026</b> – Produção científica e consolidação dos resultados
+</div>
+
+</div>
 
 </section>
 
 <section id="equipe">
 
-<h2>Coordenação do Projeto</h2>
+<h2>Coordenação</h2>
 
 <div class="team">
 
 <div class="member">
 <h3>Profa. Dra. Juliana da Silva</h3>
-<p>
-Pesquisadora na área de mutagênese ambiental e biomarcadores de dano ao DNA associados à exposição a contaminantes ambientais.
-</p>
-<p>
-Currículo Lattes:<br>
-<a href="http://lattes.cnpq.br" target="_blank">Acessar currículo</a>
-</p>
+<p>Pesquisadora na área de mutagênese ambiental e biomarcadores de dano ao DNA associados à exposição ambiental.</p>
+<p><a href="http://lattes.cnpq.br" target="_blank">Currículo Lattes</a></p>
 </div>
 
 <div class="member">
 <h3>Profa. Dra. Fernanda Rabaioli da Silva</h3>
-<p>
-Pesquisadora com atuação em toxicologia ambiental e avaliação de efeitos biológicos associados à exposição a poluentes ambientais.
-</p>
-<p>
-Currículo Lattes:<br>
-<a href="http://lattes.cnpq.br" target="_blank">Acessar currículo</a>
-</p>
+<p>Pesquisadora com atuação em toxicologia ambiental e avaliação de efeitos biológicos associados a contaminantes ambientais.</p>
+<p><a href="http://lattes.cnpq.br" target="_blank">Currículo Lattes</a></p>
 </div>
 
 </div>
@@ -308,7 +398,7 @@ Currículo Lattes:<br>
 <h2>Instituições</h2>
 
 <p>
-O projeto é desenvolvido no Laboratório de Genética Toxicológica da Universidade La Salle, com apoio da Fundação de Amparo à Pesquisa do Estado do Rio Grande do Sul.
+O projeto é desenvolvido no Laboratório de Genética Toxicológica da Universidade La Salle, com financiamento da Fundação de Amparo à Pesquisa do Estado do Rio Grande do Sul.
 </p>
 
 <div class="logos">
@@ -327,7 +417,7 @@ O projeto é desenvolvido no Laboratório de Genética Toxicológica da Universi
 
 <p><b>Projeto CRIEC‑Canoas</b></p>
 
-<p>Saúde Única • Ambiente • DNA • Saúde Humana</p>
+<p>Saúde Única • Ambiente • Exposição • DNA • Saúde Humana</p>
 
 <p>Universidade La Salle – Canoas – RS</p>
 
